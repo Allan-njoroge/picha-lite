@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picha Lite</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Picha Lite</h1>
+    <p class="subtitle">Client-Side Compression Simulation (WebP @ 80%)</p>
+
+    <div class="container">
+      <label class="upload-box" id="drop-zone">
+        <input
+          type="file"
+          id="file-input"
+          accept="image/png, image/jpeg, image/jpg"
+        />
+        <span class="btn">Select High-Res Selfie</span>
+        <p style="margin-top: 10px; font-size: 0.9rem; color: #666">
+          or drop file here
+        </p>
+      </label>
+
+      <div class="results-grid" id="results">
+        <div class="image-card">
+          <h3>Original (Upload)</h3>
+          <img id="img-original" class="preview-img" src="" alt="Original" />
+          <div class="stats">
+            Size: <strong id="size-original">0 MB</strong><br />
+            Type: <span id="type-original">JPEG</span>
+          </div>
+        </div>
+
+        <div class="image-card">
+          <h3>Optimized (Client-Side)</h3>
+          <img id="img-optimized" class="preview-img" src="" alt="Optimized" />
+          <div class="stats">
+            Size: <strong id="size-optimized">0 KB</strong><br />
+            Type: <span>image/webp</span>
+          </div>
+        </div>
+
+        <div class="savings-banner">
+          <span class="metric-label">Bandwidth Saved</span>
+          <span class="savings-text" id="savings-percent">0%</span>
+          <small id="savings-detail">Reduced payload by X MB</small>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
